@@ -1,5 +1,9 @@
-import Image, ImageChops
-import os, sys
+#!/usr/bin/python
+
+import Image
+import ImageChops
+import os
+import sys
 
 def main():
 	path = sys.argv[1]
@@ -16,9 +20,11 @@ def main():
 
 			if diff == 0:
 				os.remove(path+imgB)
-				counter++
+				counter += 1
 
 	print(counter+" files deleted\n")
+
+main()
 
 # open a path from the command line
 # for every jpeg image in the folder

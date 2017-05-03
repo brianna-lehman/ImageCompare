@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
-import Image
-import ImageChops
+from PIL import Image
+from PIL import ImageChops
 import os
 import sys
 

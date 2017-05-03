@@ -10,7 +10,7 @@ def main():
 	counter = 0
 	images = os.listdir(path)
 
-	for filenameA in images:
+	for filenameA in images[0:-2]:
 		imgA = Image.open(filenameA)
 
 		for filenameB in images[1:]:

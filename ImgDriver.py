@@ -7,6 +7,7 @@ import sys
 
 def main():
 	path = sys.argv[1]
+	print(path)
 	counter = 0
 	images = os.listdir(path)
 

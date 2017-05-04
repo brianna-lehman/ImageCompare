@@ -12,29 +12,17 @@ def main():
 	images = os.listdir(path)
 
 	for filenameA in images[0:-2]:
-		imgA = Image.open(filenameA)
+		imgA = Image.open(path+"/"+filenameA)
 
 		for filenameB in images[1:]:
-			imgB = Image.open(filenameB)
+			imgB = Image.open(path+"/"+filenameB)
 
 			diff = ImageChops.difference(imgA, imgB)
 
 			if diff == 0:
-				os.remove(path+imgB)
+				os.remove(path+"/"+imgB)
 				counter += 1
 
-	print(counter+" files deleted\n")
+	print counter, "files deleted\n"
 
 main()
-
-# open a path from the command line
-# for every jpeg image in the folder
-	# open imageA
-	# for every next image in the folder
-		# open imageB
-
-		# compare the two images
-
-		# if imageA == imageB
-			# delete imageB from the folder
-			# counter++

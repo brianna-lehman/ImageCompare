@@ -10,11 +10,20 @@ def main():
 	print(path)
 	counter = 0
 	images = os.listdir(path)
+	i = 0
 
-	for filenameA in images[0:-2]:
+	while i < len(images)-1:
+		j = i + 1
+		
+		filenameA = images[i]
+		print "Compare ", filenameA
+
 		imgA = Image.open(path+"/"+filenameA)
 
-		for filenameB in images[1:]:
+		while j < len(images):
+			filenameB = images[i+1]
+			print "to ", filenameB
+
 			imgB = Image.open(path+"/"+filenameB)
 
 			diff = ImageChops.difference(imgA, imgB)
@@ -22,6 +31,9 @@ def main():
 			if diff == 0:
 				os.remove(path+"/"+imgB)
 				counter += 1
+
+			j += 1
+		i += 1
 
 	print counter, "files deleted\n"
 

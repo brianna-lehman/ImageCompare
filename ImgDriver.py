@@ -18,11 +18,15 @@ def main():
 		filenameA = images[i]
 		print "Compare ", filenameA
 
+		# check that filenameA is a .jpeg or .jpg
+
 		imgA = Image.open(path+"/"+filenameA)
 
 		while j < len(images):
 			filenameB = images[j]
 			print "\tto ", filenameB
+
+			# check that filenameB is a .jpeg or .jpg
 
 			imgB = Image.open(path+"/"+filenameB)
 

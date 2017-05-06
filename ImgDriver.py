@@ -30,12 +30,12 @@ def main():
 
 			imgB = Image.open(path+"/"+filenameB)
 
-			diff = ImageChops.difference(imgA, imgB)
+			diff = ImageChops.difference(imgA, imgB).getbbox() is None
 
 			print "\tDifference: ", diff
 
-			if diff == 0:
-				os.remove(path+"/"+imgB)
+			if diff:
+				os.remove(path+"/"+filenameB)
 				counter += 1
 				images = os.listdir(path)
 
